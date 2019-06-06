@@ -516,7 +516,9 @@ class OrderManager:
 
     def restart(self):
         logger.info("Restarting the market maker...")
-        os.execv(sys.executable, [sys.executable] + sys.argv)
+        # os.execv(sys.executable, [sys.executable] + sys.argv)
+        # note: hitting errors, just exist and rely on systemd to restart
+        self.exit()
 
 #
 # Helpers
